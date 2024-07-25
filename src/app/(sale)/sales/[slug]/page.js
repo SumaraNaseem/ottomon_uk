@@ -50,6 +50,44 @@ const Products = ({params}) => {
   const [inStock, setinStock] = useState(""); // Initial amount value
   const [PId, setPId] = useState(""); // Initial amount value
   const [imageUrl, setinimageUrl] = useState(""); // Initial amount value
+  const [addmattresses, setaddmattresses] = useState(true);
+  const [addServices, setaddServices] = useState(true);
+  const handleButtonClick = (buttonText) => {
+    if (buttonText === "Yes") {
+      setaddmattresses(true);
+      console.log("add mattresses is   =",true);
+    } else if (buttonText === "No") {
+      setaddmattresses(false);
+      console.log("add mattresses is  =",false);
+    }
+  };
+  const handleServiceClick = (buttonText) => {
+    if (buttonText === "Yes") {
+      setaddServices(true);
+      console.log("add Services is   =",true);
+    } else if (buttonText === "No") {
+      setaddServices(false);
+      console.log("add Services is  =",false);
+    }
+  };
+  const handleRoomServiceClick = (buttonText) => {
+    if (buttonText === "Yes") {
+      setaddServices(true);
+      console.log("add Room Services is   =",true);
+    } else if (buttonText === "No") {
+      setaddServices(false);
+      console.log("add Room Services is  =",false);
+    }
+  };
+  const handleRemovalServiceClick = (buttonText) => {
+    if (buttonText === "Yes") {
+      setaddServices(true);
+      console.log("add Removal  Services is   =",true);
+    } else if (buttonText === "No") {
+      setaddServices(false);
+      console.log("add Removal Services is  =",false);
+    }
+  };
 
   const displayDepthOptions = () => {
     setShowBedDephthOptions(true);
@@ -903,6 +941,7 @@ console.log(parts,'parts')
                       "Anti-Slip Lids - Standard Top (Bed Side Supported By Wall) +£0",
                       "Foam Padded Bed Base +£125",
                     ]}
+                    // onButtonClick={handleButtonClick}
                   />
 
                   <SlipLids
@@ -912,6 +951,7 @@ console.log(parts,'parts')
                       "Foam Padded Bed Base +£125",
                     ]}
                     // buttonStyles={buttonStyles}
+                    // onButtonClick={handleButtonClick}
                   />
 
                   <SlipLids
@@ -920,7 +960,8 @@ console.log(parts,'parts')
                       "Standard Market Build +£0",
                       "Re-Inforced Storage Area & Lids +£80",
                     ]}
-                    // buttonStyles={buttonStyles}
+                    buttonStyles={buttonStyles}
+                    // onButtonClick={handleButtonClick}
                   />
 
                   <SlipLids
@@ -930,7 +971,8 @@ console.log(parts,'parts')
                       "800N Gas Pistons (55-75kg Mattress) +£25",
                       // Add more button texts as needed
                     ]}
-                    // buttonStyles={buttonStyles}
+                    buttonStyles={buttonStyles}
+                    // onButtonClick={handleButtonClick}
                   />
                 </div>
               )}
@@ -948,6 +990,7 @@ console.log(parts,'parts')
                     // Add more button texts as needed
                   ]}
                   buttonStyles={buttonStyles}
+                  
                 />
 
                  <SlipLids
@@ -958,6 +1001,7 @@ console.log(parts,'parts')
                     // Add more button texts as needed
                   ]}
                   buttonStyles={buttonStyles}
+                  onButtonClick={handleButtonClick}
                 />
                 <SlipLids
                   defaultText="Assembly Service - No"
@@ -967,6 +1011,7 @@ console.log(parts,'parts')
                     // Add more button texts as needed
                   ]}
                   buttonStyles={buttonStyles}
+                  onButtonClick={handleServiceClick}
                 />
                 <SlipLids
                   defaultText="Deliver To Room Service - No"
@@ -976,6 +1021,7 @@ console.log(parts,'parts')
                     // Add more button texts as needed
                   ]}
                   buttonStyles={buttonStyles}
+                  onButtonClick={handleRoomServiceClick}
                 />
                 <SlipLids
                   defaultText="Furniture Removal Service - No"
@@ -985,6 +1031,7 @@ console.log(parts,'parts')
                     // Add more button texts as needed
                   ]}
                   buttonStyles={buttonStyles}
+                  onButtonClick={handleRemovalServiceClick}
                 /> 
               </div>
 
